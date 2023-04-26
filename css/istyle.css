@@ -1,0 +1,356 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+.header{
+    min-height: 100vh; /*occupies entire viewport(the height of your browser*/
+    width: 100%;
+    background-image: linear-gradient(rgba(50, 18, 51, 0.7),rgba(7, 7, 7, 0.7));
+    background-position: center;
+    background-size: cover;
+    position: relative;/*positioned relative to its normal position and the other content will not be fit into gap left by the element*/
+}
+.back-video{
+    position:absolute;/*positioned relative to nearest positioned ancestor if not moves along the page scrolling*/
+    right:0;
+    bottom:0;
+    z-index:-1;/*it sends the video backwards*/
+}
+@media (min-aspect-ratio:16/9){
+    .backvideo{
+        width:auto;/*can have margin,padding,border without being bigger than parent element*/
+        height:100%;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    .backvideo{
+        width:100%;
+        height:auto;
+    }
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;/*maintains  even space between items in the flex box*/
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex: 1;/*width of the elements will be same as their content,giving the remaining full space*/
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;/*the links to other pages in a single line with space in between*/
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size:13px;
+}
+.nav-links ul li::after{
+    content:''; /*after empty space it adds a block*/
+    width:0%;
+    height:2px;
+    display:block;/*starts on a new line*/
+    background-color: rgb(135, 39, 137);
+    margin:auto;
+    transition: 0.3s;
+}
+.nav-links ul li:hover::after{
+    width:100%
+}
+.text-box{
+    width:90%;
+    color:whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);/*moving along x and y axis*/
+    text-align: center;
+}
+.text-box h1{
+    font-size: 48px;
+}
+.text-box h2{
+    font-size: 32px;
+}
+.text-box p{
+    font-size: 16px;
+    margin-top:8px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.hero-btn{
+    display: inline-block;/*to display horizonally*/
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    font-size: 12px;
+    background: transparent;
+    position: relative;
+}
+
+.hero-btn:hover{
+    border:1px solid rgb(247, 8, 179);
+    background-color: rgb(135, 39, 137);
+    transition: 0.8s;
+
+}
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .text-box h2{
+        font-size: 14px;
+    }
+    .text-box p{
+        font-size: 8px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    
+}
+
+/*Classes*/
+.ratings{
+    width: 80%;
+    margin:auto;
+    text-align:center;
+    padding-top: 100px;
+
+}
+.ratings p{
+    color: grey;
+    font-size:14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding:10px;
+    text-align: center;
+}
+.row{
+    margin-top:2%;
+    display:flex;
+    justify-content: space-between;
+}
+.ratings-col{
+    flex-basis: 31%;/*it specifies the initial size of the flex item*/
+    background: rgb(47, 8, 48);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+.ratings-col p{
+    color:white;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin:10px;
+    color:rgb(135, 39, 137);
+}
+@media(max-width: 700px)
+{
+    .row{
+        flex-direction: column;
+    }
+}
+
+/*bestsellers*/
+.bestsellers{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.bestsellers-col{
+    flex-basis: 32%;
+    margin-bottom:30px;
+    position: relative;
+}
+.bestsellers p
+{
+
+color: grey;
+    font-size:14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding:10px;
+    text-align: center;
+}
+
+/*signup*/
+.signup{
+    margin:100px auto;
+    width:85%;
+    background-image: linear-gradient(rgba(50, 18, 51, 0.7),rgba(4,9,19,0.7)),url(../imagess/younggirl.jpg);
+    background-position: center;
+    background-size:cover;
+    text-align: center;
+    padding: 100px 0;
+}
+.signup p{
+    color: grey;
+    font-size:14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding:10px;
+    text-align: center;
+}
+.signup h1{
+    color:white;
+    margin-bottom:40px;
+    padding: 0;
+}
+@media(max-width: 700px)
+{
+    .signup h1{
+        font-size: 24px;
+    }
+}
+
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.footer p
+{
+    text-align: center;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top:10px;
+    font-weight:600;
+}
+
+
+
+/*bestseller page*/
+.subheader{
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(50, 18, 51, 0.7),rgba(4,9,19,0.7)),url(../imagess/perfect.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+    color: white;
+}
+.subheader h1{
+    margin-top: 40px;
+}
+/*shop page*/
+.subheader2{
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(50, 18, 51, 0.7),rgba(4,9,19,0.7)),url(../imagess/shop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align:center;
+    color: white;
+}
+.subheader2 h1{
+    margin-top: 40px;
+}
+.offer{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.offer-col{
+    flex-basis: 32%;
+    margin-bottom:30px;
+    position: relative;
+}
+
+/*Shop*/
+.shop{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.shop-col{
+    flex-basis: 32%;
+    margin-bottom:30px;
+    position: relative;
+}
+.shop p{
+    text-align: center;
+}
+
+/*Contactus*/
+.contact-us{
+    width:80%;
+    margin:auto;
+}
+.contact-col{
+    flex-basis: 48%;
+}
+.contact-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.contact-col div .fa{
+    font-size: 28px;
+    color: rgb(81, 21, 50);
+    margin: 10px;
+    margin-left: 80px;
+}
+.contact-col input{
+    width:100%;
+    padding:15px;
+    margin-bottom: 16px;
+    border:3px solid rgb(116, 17, 89);
+}
+.contact-col textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom: 16px;
+    border:3px solid rgb(116, 17, 89);
+}
+
+
+
+/*signin*/
+.signin{
+    width:60%;
+    margin:auto;
+}
+.signin h1, p{
+    text-align: left;
+    margin-top:30px;
+}
+.signin p{
+    text-align: left;
+    margin-top: 6px;
+}
+.signin-col label{
+    margin-right: 45%;
+    padding-bottom: 15px;
+}
+.signin-col input{
+    width:70%;
+    padding:12px;
+    margin-bottom: 30px;
+    border:3px solid rgb(116, 17, 89);
+    text-align: left;
+}
+.signin-col select{
+    width:75%;
+    padding:12px;
+    margin-bottom: 30px;
+    border:3px solid rgb(116, 17, 89);
+}
